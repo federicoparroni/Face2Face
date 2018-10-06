@@ -1,0 +1,27 @@
+# model 99
+
+conv,16,3,3
+pool,2,2
+dropout,0.1
+
+conv,16,3,3
+pool,2,2
+dropout,0.1
+
+conv,16,3,3
+pool,2,2
+dropout,0.1
+
+conv,16,3,3
+
+flatten
+
+dense,128
+dropout,0.3
+
+dense,128
+
+dense,128
+
+dense,2,softmax
+

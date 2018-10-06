@@ -1,0 +1,133 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
+% 1st arg: Author. 2nd arg: Label
+\newcommand{\cit}[2]{#1 \textit{et al.} \cite{#2}}
+
+\newcommand*{\thead}[1]{\bfseries #1} 
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[citecolor=black,pagebackref=true,breaklinks=true,letterpaper=true,colorlinks=true,linkcolor=black,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ifcvprfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{Face2Face: an innovative way to face recognition \\ DL-IC 2018 Project} 
+
+\author{D'Amico Edoardo\\
+Politecnico di Milano\\
+{\tt\small damicoedoardo95@gmail.com}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Gabbolini Giovanni\\
+Politecnico di Milano\\
+{\tt\small giovanni.gabbolini@gmail.com}
+\and
+Parroni Federico\\
+Politecnico di Milano\\
+{\tt\small federico.parroni@live.it}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+In this paper we present a method to compare two images and get a similarity measure of these. Common usages of such a technique are several, first of all, authentication and face matching.
+\\
+This system, called Face2Face, uses a deep convolutional neural network to map a couple of images into a vector of features which capture the similarity between the two images. Then, this vector is processed by the last fully-connected layers of the network which output a measure in the range [0,1] representing the probability of having depicted the same person on the two images. Training has been done by stacking couples of images one on top of the other, exploiting convolution filters in order to capture face similarities. This method boosts also the size of the training set: in fact, each image of the N in the training set can be coupled with all the others, so the training samples that can be obtained $\in O(N^2)$.
+\\
+The main benefit of this mechanism are essentially the almost absence of hardware needed (only a camera) and the ease of use for the actual implementation. 
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+%------------------------------------------------------------------------
+
+\input{intro}
+
+\input{relatedwork}
+
+\input{proposedapproach}
+
+\input{experiments}
+
+\input{conclusion}
+
+\section*{Acknowledgements}
+We would like to thank all the people that contributed with their own photos to our project, which made our work concretely possible.
+
+%-------------------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{google} 
+Florian Schroff, Dmitry Kalenichenko and James Philbin
+\textit{FaceNet: A unified embedding for face recognition and clustering}.
+
+\bibitem{hypsel}
+Yoshua Bengio
+\textit{Practical Recommendations for Gradient-Based Training of Deep
+Architectures}
+
+\bibitem{gdpdataret}
+\textit{http://keyblade95.altervista.org/faceupload/}
+
+\bibitem{augmentor}
+\textit{https://github.com/mdbloice/Augmentor}
+
+\bibitem{nonlintransf}
+\textit{https://stackoverflow.com/questions/19363293/whats-the-fastest-way-to-increase-color-image-contrast-with-opencv-in-python-c}
+
+\bibitem{histeq}
+\textit{https://towardsdatascience.com/image-augmentation-for-deep-learning-using-keras-and-histogram-equalization-9329f6ae5085}
+
+\bibitem{hog}
+\textit{https://www.learnopencv.com/histogram-of-oriented-gradients/}
+
+\bibitem{facealign}
+\textit{https://www.pyimagesearch.com/2017/05/22/face-alignment-with-opencv-and-python/}
+
+\bibitem{aleju}
+\textit{https://github.com/aleju/face-comparer}
+
+\bibitem{taigman}
+\textit{Y. Taigman, M. Yang, M. Ranzato, and L. Wolf. Deepface:
+Closing the gap to human-level performance in face verification.}
+
+\bibitem{zhenyao}
+\textit{Z. Zhu, P. Luo, X. Wang, and X. Tang. Recover canonical view
+faces in the wild with deep neural networks.}
+
+\bibitem{repo}
+\textit{https://github.com/keyblade95/DeepLearningProject/}
+
+\end{thebibliography}
+
+\end{document}

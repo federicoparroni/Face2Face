@@ -1,0 +1,23 @@
+# model 7
+
+conv,8,3,3
+pool,2,2
+dropout,0.2
+
+conv,8,3,3
+pool,2,2
+dropout,0.2
+
+conv,8,3,3
+pool,2,2
+dropout,0.2
+
+flatten
+
+dense,256
+dropout,0.5
+
+dense,256
+dropout,0.5
+
+dense,2,softmax

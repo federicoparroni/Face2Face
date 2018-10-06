@@ -1,0 +1,11 @@
+\section{Introduction}
+
+Nowadays, authentication is one of the most critical point of computer security. Authentication is a mechanism that allows a user to exhibit a proof of his identity in order to be recognized by a particular system. Aim of this project is to implement a biometric authentication software, based on face recognition, using a convolutional neural network. The only hardware requirement is a camera. The process of authentication is composed by the following steps:
+\begin{itemize}
+\item User records a set of photos of himself (sample photos) and saves them into the system
+\item When user wants to authenticate, the system asks for a photo
+\item If the similarity between the sample photos and the current one is greater than a fixed threshold, user is authenticated positively
+\end{itemize}
+The main advantage of this approach is the cost/performance tradeoff that we can achieve: currently, costs of commercial biometric scanners are in the order of hundreds of euros, while a suitable camera for this technique costs about 10-20\euro \, and the probability of granting access to a wrong user is in the order of 1 over 1000.
+
+This work should provide a different approach from the current state of the art to compare two images using a deep convolutional neural network, resulting in a lightweight and real-time process. The neural network takes as input two images and outputs a similarity value between 0 and 1, so it can be directly used without other intermediate softwares. The methodolody used to train the network requires a quite low number of photos to build a large amount of training samples, as described later in \ref{sec:exp}.

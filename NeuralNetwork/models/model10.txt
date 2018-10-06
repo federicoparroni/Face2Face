@@ -1,0 +1,26 @@
+# model 10
+
+conv,8,6,6
+pool,2,2
+dropout,0.1
+
+conv,16,6,6
+pool,2,2
+dropout,0.1
+
+conv,16,6,6
+pool,2,2
+dropout,0.1
+
+flatten
+
+dense,256
+dropout,0.2
+
+dense,256
+dropout,0.2
+
+dense,128
+dropout,0.2
+
+dense,2,softmax

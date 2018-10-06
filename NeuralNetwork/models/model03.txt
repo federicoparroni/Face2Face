@@ -1,0 +1,19 @@
+# model 3
+
+conv,8,3,3
+pool,2,2
+dropout,0.2
+
+conv,8,3,3
+pool,2,2
+dropout,0.2
+
+flatten
+
+dense,128
+dropout,0.5
+
+dense,128
+dropout,0.5
+
+dense,2,softmax
